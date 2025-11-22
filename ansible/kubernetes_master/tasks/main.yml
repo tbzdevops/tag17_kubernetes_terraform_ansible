@@ -46,7 +46,7 @@
 
 - name: Initialize Kubernetes control plane
   ansible.builtin.shell:
-    cmd: kubeadm init --control-plane-endpoint={{ansible_default_ipv4["address"]}} --pod-network-cidr={{ cni_network }} --upload-certs > /kubeadm_output
+    cmd: kubeadm init --control-plane-endpoint={{ansible_facts["default_ipv4"]["address"]}} --pod-network-cidr={{ cni_network }} --upload-certs > /kubeadm_output
     creates: /kubeadm_output
   become: true
   changed_when: false 
