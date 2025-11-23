@@ -1,0 +1,5 @@
+- name: Get all nodeport information into file /tmp/nodeport.info
+  ansible.builtin.shell:
+    cmd: for node in $(kubectl get nodes|awk '$2=="NotReady" {print $1}') ; do kubectl drain $node --ignore-daemonsets --delete-emptydir-data; kubectl delete node $node ; done
+  become: true
+
