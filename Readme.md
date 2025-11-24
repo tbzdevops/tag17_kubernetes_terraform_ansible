@@ -1,6 +1,9 @@
 # Kubernetes Clustrer Setup
 
 This Repo is setting up a Kubernetes Cluster.  
+
+## Settings
+
 The GITHUB-Action Pipeline needs 5 Secret to be set:  
 
 SSH-Keypair for accessing VMs:  
@@ -21,3 +24,17 @@ The following files are used for configuration:
 - `terraform/backend.conf`: Set AWS-Region, S3-bucket, Dynamo-DB-Table for Terraform-State
 - `terraform/terraform.tfvars`: All variables defined in `terraform/variables.tf`. Required are only `join_master_nodes` and `join_worker_nodes` which are the count of additional masters (if set to 2, we will end up with 3 masters) and worker nodes.
   
+## Expected Results
+
+### AWS-Setup
+- VPC, Security-Groups, ...
+- AWS-Instances:   
+  - `master-node-1`: One instance Master of Masters
+  - `join-worker-node-x`: Zero or more instances according to the config in `terraform/terraform.tfvars`
+  - `join-master-node-x`: Addtional master nodes according to the config in `terraform/terraform.tfvars`
+
+### Kubernetes-Setup
+
+- Kubernetes including the apps `ArgoCD`,`Graphana-Prometheus`,....
+- Passwords and Nodeports can be found in `/mastersummary.txt` on the instance `master-node-1`
+
