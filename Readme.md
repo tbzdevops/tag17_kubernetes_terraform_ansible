@@ -38,3 +38,7 @@ The following files are used for configuration:
 - Kubernetes including the apps `ArgoCD`,`Graphana-Prometheus`,....
 - Passwords and Nodeports can be found in `/mastersummary.txt` on the instance `master-node-1`
 
+
+### Credits
+
+Danke an Md.Zahirul. Sein [Repo](https://github.com/zahir012/K8s-cluster-setUp-with-ansible) war die Grundlage zum Setup des K8s-Clusters mit Ansible.
