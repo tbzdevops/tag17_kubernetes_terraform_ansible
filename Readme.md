@@ -41,4 +41,4 @@ The following files are used for configuration:
 
 ### Credits
 
-Danke an Md.Zahirul. Sein [Repo](https://github.com/zahir012/K8s-cluster-setUp-with-ansible) war die Grundlage zum Setup des K8s-Clusters mit Ansible.
+Big thanks to Md. Zahirul and Akash Gupta. Their repo was the starting point for setting up the K8s cluster with Ansible.
